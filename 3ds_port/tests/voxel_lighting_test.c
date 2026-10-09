@@ -5,6 +5,8 @@
 #include <string.h>
 
 #include "voxel_lighting.h"
+
+const int gTileset_Dewford = 0;
 #include "voxel_atlas.h"
 #include "voxel_regions.h"
 #include "voxel_building.h"
