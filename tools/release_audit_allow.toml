@@ -12,6 +12,7 @@ paths = [
     "Emerald3DS-v*-Windows/payload/*/Emerald3DS.3dsx",
     # the same executables inside Emerald3DS-WebPayload.zip
     "payload/Emerald3DS.3dsx",
+    "Emerald3DS.3dsx",
     "payload/*/Emerald3DS.3dsx",
 ]
 
