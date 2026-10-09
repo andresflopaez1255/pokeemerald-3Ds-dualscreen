@@ -660,7 +660,8 @@ static float sLayerOrigin;
  * so its centre reaches the middle of the viewport at +76. The voxel overlay
  * does the same (ComposeVoxelOverlay); sFieldUi asks for it in the 2D field.
  */
-#define CTR_FIELD_UI_SHIFT 76.0f
+#define CTR_FIELD_UI_SHIFT 0.0f
+#define CTR_FIELD_UI_ZOOM 1.5f
 static bool sFieldUi;
 /*
  * The banner of a field move (src/field_effect.c, the mon shown for Surf, Cut,
@@ -8051,9 +8052,10 @@ void CtrVideo_Present(void)
     sCentredScreen = sCentred ? sCentredRequested : CTR_CENTRED_NONE;
     sBattle = sBattleRequested && !sStage && !sCentred;
     sTransition = sTransitionRequested && sLineRegs && !sStage && !sCentred && !sBattle;
-    sZoom = sBattle ? CTR_BATTLE_ZOOM : 1.0f;
+    bool field = !sStage && !sCentred && !sBattle && CtrGame_IsOverworld();
+    sZoom = sBattle ? CTR_BATTLE_ZOOM : (field ? CTR_FIELD_UI_ZOOM : 1.0f);
     /* GBA (120, 112) - the middle of the scene's bottom edge - on screen (200, 192). */
-    sOffX = sBattle ? CTR_GAME_WIDTH / 2 - 120 * sZoom : 0.0f;
+    sOffX = sBattle ? CTR_GAME_WIDTH / 2 - 120 * sZoom : (field ? 20.0f : 0.0f);
     sOffY = sBattle ? CTR_GAME_HEIGHT - 48 - 112 * sZoom : 0.0f;
     sShiftZoom = sZoom;
     if (sStage || sCentred)
