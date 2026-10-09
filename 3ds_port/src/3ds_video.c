@@ -8217,8 +8217,7 @@ void CtrVideo_Present(void)
      * composed at all: with 3D off this is the same single pass as before.
      * Whole pixels only, so every layer stays on the pixel grid in both eyes.
      */
-    bool field = !sStage && !sCentred && !sBattle && CtrGame_IsOverworld();
-#if CTR_VOXEL_ENABLED
+    #if CTR_VOXEL_ENABLED
     /*
      * Preparing the voxel frame is part of the decision. If the atlas or the
      * mesh could not be built this frame, the 2D compositor draws it: leaving
