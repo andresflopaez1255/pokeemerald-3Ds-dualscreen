@@ -12,6 +12,8 @@
 #include "voxel_atlas.h"
 #include "voxel_building.h"
 
+const int gTileset_Dewford = 0;
+
 static VoxelMapInstance sMap={.layoutId=1,.width=8,.height=8};
 static VoxelAtlasMap sAtlas;
 static VoxelVertex sWhole[12000],sChunks[12000];
