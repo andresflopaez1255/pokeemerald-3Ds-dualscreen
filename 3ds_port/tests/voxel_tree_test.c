@@ -8,6 +8,8 @@
 #include "voxel_atlas.h"
 #include "voxel_regions.h"
 
+const int gTileset_Dewford = 0;
+
 static VoxelMapInstance sMap = {.originX = 7, .originY = 7, .width = 2, .height = 2};
 static bool sGeneral = true;
 static int sTiles[] = {0x1D6, 0x1D7, 0x1E6, 0x1E7};
