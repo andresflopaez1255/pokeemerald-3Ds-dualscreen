@@ -8052,7 +8052,8 @@ void CtrVideo_Present(void)
     sBattle = sBattleRequested && !sStage && !sCentred;
     sTransition = sTransitionRequested && sLineRegs && !sStage && !sCentred && !sBattle;
     
-    bool field = !sStage && !sCentred && !sBattle && CtrGame_IsOverworld();\n    sZoom = sBattle ? CTR_BATTLE_ZOOM : (field ? 1.5f : 1.0f);
+    bool field = !sStage && !sCentred && !sBattle && CtrGame_IsOverworld();
+    sZoom = sBattle ? CTR_BATTLE_ZOOM : (field ? 1.5f : 1.0f);
     /* GBA (120, 112) - the middle of the scene's bottom edge - on screen (200, 192). */
     sOffX = sBattle ? CTR_GAME_WIDTH / 2 - 120 * sZoom : (field ? 20.0f : 0.0f);
     sOffY = sBattle ? CTR_GAME_HEIGHT - 48 - 112 * sZoom : 0.0f;
